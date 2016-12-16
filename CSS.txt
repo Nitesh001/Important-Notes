@@ -1,0 +1,98 @@
+Important CSS selectors:
+
+1. child, descendant and attribute selector
+
+li.myClass + li{
+  color:yellow
+}
+
+li.myClass ~ li{  /*matches all li that comes after .myClass*/
+  color:green;
+}
+
+p[lang|="en"]{ /*selects all the tags where attribute 'lang' starts with 'en' */
+  color: red;
+}
+
+p[lang~="more"]{ /*selects all the tags where attribute 'lang' has word 'more' in it with spaces */
+  color:blue;
+}
+
+/*Similarly there are other tags. Like,
+E[attr^=val] //attr value starts with 'val'
+E[attr$=val] //attr value ends with 'val'
+E[attr*=val] //String 'val' is a part of value of attribute
+*/
+
+2. Selector based on current state:
+Three states are checked, disabled and enabled 
+
+so, for checkbox
+
+input[type='checkbox']:checked + label {
+  color: purple;
+}
+
+But for input elements in HTML5, there are more states like, valid, invalid, required, optional, out-of-range, in-range
+
+For eg, <input type="number" maximum=10 minimum=5 />
+
+Any value not in this range will be invalid so,
+
+input:invalid{
+}
+
+and 
+input:out-of-range{
+}
+
+3. 'Style' tag can also be made contenteditable:
+then in CSS:
+[contenteditable] {
+  -webkit-user-modify : read-write-plaintext-only;
+}
+
+4. Selectors based on position of elements w.r.t their parent in the DOM:
+first-child,
+last-child,
+first-of-type,
+last-of-type,
+only-child,
+only-of-type
+nth-child,
+nth-of-type,
+nth-last-child,
+nth-lst-of-type
+
+like, 
+div.myClass:nth-child(3n){  //Every third child
+} 
+
+div.myClass:nth-child(4){ //4th child from the top
+}
+
+div:nth-of-type(2){ //2nd div of any type of parent
+}
+
+div.myClass:nth-child(3n-1){
+}
+
+An awesome experiment:
+
+li:first-of-type:last-of-type{ //It means, any li which is a first of its type and also last of its type means, there is only one li
+  width:100%;
+}
+
+li:first-of-type:last-nth-of-type(3){ //It means, any li which is a first of its type and also 3rd last from the bottom, it means there are 3 lis
+  width:33.3%
+}
+
+
+
+
+
+
+
+
+
+
