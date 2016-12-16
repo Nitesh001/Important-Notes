@@ -83,10 +83,22 @@ li:first-of-type:last-of-type{ //It means, any li which is a first of its type a
   width:100%;
 }
 
-li:first-of-type:last-nth-of-type(3){ //It means, any li which is a first of its type and also 3rd last from the bottom, it means there are 3 lis
+li:nth-of-type(1):nth-last-of-type(3){ //It means, any li which is a first of its type and also 3rd last from the bottom, it means there are 3 lis
   width:33.3%
 }
 
+A very good example of using nth-of-type is designing chess board.
+like,
+tr:nth-of-type(even) td:nth-of-type(even),
+tr:nth-of-type(odd) td:nth-of-type(odd){
+  background-color: black; //Here, background color should be black of all alternate elements
+}
+To generate star in CSS:
+content : "\2605"
+
+CSS Exclusion also available as:
+
+div:not(.myExclude) //all divs except that have class myExclude
 
 
 
