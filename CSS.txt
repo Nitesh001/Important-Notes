@@ -2,7 +2,7 @@ Important CSS selectors:
 
 1. child, descendant and attribute selector
 
-li.myClass + li{
+li.myClass + li{    //matches only one li element that comes after 'myClass' 
   color:yellow
 }
 
@@ -99,6 +99,139 @@ content : "\2605"
 CSS Exclusion also available as:
 
 div:not(.myExclude) //all divs except that have class myExclude
+
+5. Other pseudo classes:
+
+link, target
+
+div:target > a{
+
+}
+It means, acnhor element inside such a div which was clicked just now.
+
+:root: It is generally used with rem unit. May be the part of next version of CSS.
+
+
+For links: 
+hover, visited, active, focus, link
+
+6) Pseudo elements:
+Double colon indicates pseudo elements
+::first-line
+::first-letter
+::selection = When you select any element (for copy or search), at that time what CSS element should have
+::before
+::after
+
+check selectivizr library
+
+7) CSS specificity:
+
+Class selector, attribute selectors and pseudo selectors (.my, [type='checkbox'] and :last-child) both add same weight to the specificity.
+In terms of specificity, id > class > element
+Global selector(*) and combinators like >, +, ~ have no weight in specificity
+
+8) Generated content in CSS:
+content property in CSS
+
+p:before{ //Places hello before the content of p tag
+ content : "Hello"
+}
+
+p:after{ //Places bye after the content of p tag
+ content : "Bye"
+}
+
+For eg, 
+<p>
+<!-- This is before place -->
+My World
+<!-- This is after place -->
+</p>
+
+If the element is empty then pseudo before and after can't work.
+Only when there is some content in element, before and after work properly.
+
+Type of values that can be used with content:
+
+content : ""
+content : "\2603" //unicode character, for characters use copypastecharacter.com
+content : "(" attr(href) ")"
+content : counter(name);
+		  counter-increment : name;
+		  
+9) Media Queries:
+<link rel="stylesheet" media="screen" href="style.css" />
+
+How to include file as per external CSS syntax:
+<link rel="stylesheer" media = 'screen and (max-width:600px)' href="css/smartphone.css" />
+
+or
+
+<style>
+	@import "myCSS.css"
+</style>
+
+or
+
+@import url(myCSS.css)
+
+@media screen and (orientation: landscape){
+
+}
+
+Write CSS based on device and browser capabilities:
+
+@media screen and (-webkit-min-device-pixel-ratio:2){
+	//This is for iPhone
+	.iphone4{
+		/* high DPI */
+	}
+}
+
+@media screen and (transform-3d){
+	.transforms{
+	
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width:500px){
+	@ms-view-port {
+		width:device-width
+	}
+}
+
+Also works with {-prefix-animation} and {-prefix-transition}
+
+@viewport{
+	width:device-width;
+	zoom:0.5
+}
+
+//This is same as we mention in meta tag BUT CURRENTLY SUPPORTED ONLY IN IE10+
+
+mediaqueri.es
+
+min-width
+min-device-width
+min-aspect-ratio
+min-device-aspect-ratio
+
+same with max
+
+To check if animation is separated, write separate CSS as
+
+@media screen and (-webkit-animation){ //only three values are allowed here -prefix-animation, -prefix-transition, -prefix transform-3d
+	
+}
+
+@supports:
+
+
+
+
+
+
 
 
 
