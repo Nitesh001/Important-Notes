@@ -227,7 +227,59 @@ To check if animation is separated, write separate CSS as
 
 @supports:
 
+@font-face:
 
+To create a font and then once you have created a font, you can use it in your project using simply font-family.
+Types of font files: eot, ttf/otf, svg, woff
+
+Two places where font can be downloaded for free:
+Google Fonts,
+https://www.fontsquirrel.com/tools/webfont-generator
+
+10) text-shadow: top left blur color
+For transparent shadows:
+.trans {
+	text-shadow : 0 5px 1px rgba(0,0,0,0.2);
+}
+
+box-shadow: inset? horizonal vertical blur spread color
+We can give multiple text-shadows/box-shadows for same element separated by comma.
+
+11) 2D transform functions:
+translate(lengthX, lengthY)
+scale(X,Y) : X,Y = % by which width and height have to be changed
+rotate()
+skewX
+skewY
+
+transform-origin: bottom right // We want to start rotating our object from bottom right position
+
+backface-visibility: 
+
+Any properties that has mid point value can be transitioned 
+like, opacity not like display:block to display:inline
+
+Also, height:100px to height:500px //transitionable
+but height:auto to height:500px //Not transitionable
+
+persepctive property in CSS
+backface-visibility:hidden
+
+@keyframes NAME{
+	from:{
+		left:0;
+	}
+	
+	to:{
+		left:100%;
+	}
+	
+Now, animation-name: NAME
+animation-duration:5s;
+animation-timing-function : linear or ease-out or cubic-bezier
+animation-direction: normal or alternate
+iteration-count:3 //how many times you want to iterate
+}
 
 
 
