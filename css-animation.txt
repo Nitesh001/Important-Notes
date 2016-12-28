@@ -1,1 +1,20 @@
  //For CSS Animations
+tarnsition-property : background-color, border-radius  //The CSS property(or properties) on which transition should be applied.
+transition-duration: 3s, 5s //timing (or timings) for how long transition should run for different properties
+transition-delay: 3s //transition starts after 3s
+
+CSS transform:
+
+3 main tasks:
+to change shape, size, position
+
+Four transform methods are:
+skew(), scale(), translate(), rotate()
+
+transform syntax:
+
+transform : function()
+like,
+transform : skew(X,Y) 
+or
+transform: scale(X,Y)
