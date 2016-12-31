@@ -18,3 +18,16 @@ like,
 transform : skew(X,Y) 
 or
 transform: scale(X,Y)
+
+Transition timing function values:
+
+ease, ease-in, ease-out, ease-in-out, linear
+
+3D transform:
+perspective
+perspective-origin
+transform-origin
+transform-style
+backface-visibility
+
+transform-style
